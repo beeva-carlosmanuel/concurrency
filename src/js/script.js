@@ -45,6 +45,7 @@ app.controller('myCtrl', function ($scope) {
    * OnInit
   **/
   this.$onInit = function () {
+    $scope.googleSigninClientId = googleSigninClientId;
     // En Document Ready.. load FanOut:
     $scope.onDocReady();
 
