@@ -29,5 +29,10 @@ De esta manera, cada editor (vista de la página) obtendrá los cambios en tiemp
 y se guardarán de forma automática para que no se pierda ningún cambio 
 y no sea necesario guardar cambios.
 
+URL DE PRUEBA:
 
+https://concurrency.s3-eu-west-1.amazonaws.com/index.html
 
+REPO: 
+	
+https://github.com/beeva-carlosmanuel/concurrency

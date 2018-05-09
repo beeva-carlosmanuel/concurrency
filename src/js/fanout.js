@@ -14,7 +14,9 @@ var jwt_encode = function (payload, key) {
     return segments.join('.');
 };
 
+// Alias de: $(document).ready( function() {
 $(function() {
+    
     if(!('EventSource' in window)) {
         $('#test-header').text('Error: Realm domain is still setting up. This can happen if your realm or account was very recently created. Try again in a minute or so.');
         return;
