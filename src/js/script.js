@@ -1,3 +1,41 @@
+
+/**
+ * Comprueba y recupera las credenciales de la sesión
+ * @returns {Boolean}
+ */
+function getCredentials() {
+  var debug = false;
+  if (typeof (Storage) !== "undefined") {
+    if (sessionStorage.accessKeyId && sessionStorage.secretAccessKey && sessionStorage.sessionToken && sessionStorage.expired) {
+      var region = sessionStorage.region; // https://goo.gl/CLhMq3
+      var credsData = {
+        accessKeyId: sessionStorage.accessKeyId,
+        secretAccessKey: sessionStorage.secretAccessKey,
+        sessionToken: sessionStorage.sessionToken,
+        expireTime: sessionStorage.expireTime,
+        expired: sessionStorage.expired
+      };
+      var creds = new AWS.Credentials(credsData);
+      AWS.config.update({region: region, credentials: creds});
+      if (debug) console.log('Acceso condecido como administrador.');
+      return true;
+    }
+  }
+}
+
+/**
+ * Error: The provided token has expired.
+ * @returns {undefined}
+ */
+function expiredToken() {
+  sessionStorage.accessKeyId = "";
+  sessionStorage.secretAccessKey = "";
+  sessionStorage.sessionToken = "";
+  sessionStorage.expired = "";
+  console.log('User signed out.');
+  window.location.replace("/home/index.html");
+}
+
 const debug = true;
 
 var app = angular.module('myApp', []);
