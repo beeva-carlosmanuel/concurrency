@@ -1,5 +1,5 @@
 /**
- * App Configuration file
+ * App Configuration file.
  * Este fichero está en .gitignore (no se versiona): hay que subirlo directamente a s3 una vez configurado
  */
 
