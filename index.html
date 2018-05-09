@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="src/img/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="{{googleSigninClientId}}">
     <script src="https://code.jquery.com/jquery-1.9.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/aws/aws-sdk-js/master/dist/aws-sdk.js" crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/aws/amazon-cognito-identity-js/master/dist/aws-cognito-sdk.min.js" crossorigin="anonymous"></script>
@@ -18,17 +19,20 @@
     <link rel="stylesheet" href="src/css/estilos.css">
   </head>
   <body ng-app="myApp" ng-controller="myCtrl">
+    <div class="g-signin2" data-onsuccess="onLogIn"></div>
     <p id="test-header"></p>
     <div id="test-elements" style="visibility: visible;">
         <form class="form-inline" id="test-form">
             <!-- <input id="test-text" type="text" class="input-xlarge input-text" name="text"> -->
-            <textarea ng-model="data" ng-keypress="count = count + 1" ng-init="count=0" id="data" style="width: 100%;" class="areatext" rows="20"></textarea>
+            <textarea ng-model="data" ng-keypress="count = count + 1" ng-init="count=0" id="data" style="width: 90%;" class="areatext" rows="10"></textarea>
             <!-- <button id="test-send" class="btn btn-primary sender">Send</button> -->
         </form>
         key press count: {{count}}
         <div class="well well-large" id="output"></div>
     </div>
 
+    <script type="text/javascript" src="src/js/config.js"></script>
+    <script type="text/javascript" src="src/js/auth.js"></script>
     <script type="text/javascript" src="src/js/hmac-sha256.js"></script>
     <script type="text/javascript" src="src/js/enc-base64-min.js"></script>
     <script type="text/javascript" src="src/js/script.js"></script>
