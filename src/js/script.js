@@ -65,6 +65,9 @@ app.controller('myCtrl', function ($scope) {
     });
   }
 
+  /**
+   * base64urlEscape
+   **/
   $scope.base64urlEscape = function (str) {
       return str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
   };
