@@ -36,7 +36,7 @@ function expiredToken() {
   window.location.replace("/home/index.html");
 }
 
-const debug = true;
+// const debug = true;
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope) {
