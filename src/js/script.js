@@ -37,6 +37,7 @@ function expiredToken() {
 }
 
 // const debug = true;
+const tengoAcceso = getCredentials();
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope) {
